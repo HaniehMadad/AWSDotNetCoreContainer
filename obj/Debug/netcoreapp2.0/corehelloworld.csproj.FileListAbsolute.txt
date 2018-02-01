@@ -1,0 +1,10 @@
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/bin/Debug/netcoreapp2.0/corehelloworld.deps.json
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/bin/Debug/netcoreapp2.0/corehelloworld.runtimeconfig.json
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/bin/Debug/netcoreapp2.0/corehelloworld.runtimeconfig.dev.json
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/bin/Debug/netcoreapp2.0/corehelloworld.dll
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/bin/Debug/netcoreapp2.0/corehelloworld.pdb
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/obj/Debug/netcoreapp2.0/corehelloworld.csproj.CoreCompileInputs.cache
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/obj/Debug/netcoreapp2.0/corehelloworld.AssemblyInfoInputs.cache
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/obj/Debug/netcoreapp2.0/corehelloworld.AssemblyInfo.cs
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/obj/Debug/netcoreapp2.0/corehelloworld.dll
+/Users/hanieh.madad/AWS/Docker & dotnet/corehelloworld/obj/Debug/netcoreapp2.0/corehelloworld.pdb

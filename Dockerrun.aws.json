@@ -1,0 +1,38 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "dotnectcorehelloworld",
+      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld",
+      "environment": [],
+      "essential": true,
+      "memory": 200,
+      "portMappings": [
+        {
+          "containerPort": 8080
+        }
+      ],
+      "mountPoints": [],
+      "links": null,
+      "volumesFrom": [],
+      "extraHosts": null,
+      "dnsServers": null,
+      "disableNetworking": null,
+      "dnsSearchDomains": null,
+      "hostname": null,
+      "entryPoint": null,
+      "ulimits": null,
+      "dockerSecurityOptions": null,
+      "workingDirectory": null,
+      "readonlyRootFilesystem": null,
+      "command": null,
+      "user": null,
+      "dockerLabels": null,
+      "logConfiguration": null,
+      "cpu": 1,
+      "privileged": null,
+      "memoryReservation": null
+    }
+  ],
+  "volumes": []
+}
