@@ -2,14 +2,15 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "dotnectcorehelloworld",
-      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld",
+      "name": "testdocker3",
+      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/testdocker3",
       "environment": [],
       "essential": true,
       "memory": 200,
       "portMappings": [
         {
-          "containerPort": 8080
+          "hostPort": 80,
+          "containerPort": 80
         }
       ],
       "mountPoints": [],
