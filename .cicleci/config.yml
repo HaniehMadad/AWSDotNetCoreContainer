@@ -1,0 +1,22 @@
+version: 2
+jobs:
+
+  build:
+    docker:
+      - image: paulinhu/netcore-docker-build
+    environment:
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+    steps:
+      - checkout
+      - run: dotnet restore
+      - run: dotnet build
+      # Once unit-tests pass, create docker image
+      # For security purposes, circleci requires this step to isolate remote docker commands. 
+      # More info at: https://circleci.com/docs/2.0/building-docker-images/
+      - setup_remote_docker
+
+      - run: |
+          # This approach feels faster then the provided as example on Docker website using multi-staged builds.
+          # https://docs.docker.com/engine/examples/dotnetcore/
+          docker build -t corehelloworld:v1.0 .
