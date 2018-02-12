@@ -13,6 +13,16 @@ jobs:
       # For security purposes, circleci requires this step to isolate remote docker commands. 
       # More info at: https://circleci.com/docs/2.0/building-docker-images/
       - setup_remote_docker
+      # install python and awscli
+      - run:
+        name: Install dependencies
+        working_directory: /
+        command: |
+          apt-get -y -qq update
+          apt-get -y -qq install python3.4-dev
+          curl -O https://bootstrap.pypa.io/get-pip.py
+          python3.4 get-pip.py --user
+          pip install awscli --upgrade --user
 
       # Login to AWS with IAM credentials
       - run: eval "$(aws ecr get-login --no-include-email --region ap-southeast-2)"
