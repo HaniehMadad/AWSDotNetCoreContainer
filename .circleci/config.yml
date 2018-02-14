@@ -3,7 +3,7 @@ jobs:
 
   build:
     docker:
-      - image: paulinhu/netcore-docker-build
+      - image: hanieh/dotnetcore-awsl-cli-docker-ce
     environment:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
@@ -13,24 +13,10 @@ jobs:
       # For security purposes, circleci requires this step to isolate remote docker commands. 
       # More info at: https://circleci.com/docs/2.0/building-docker-images/
       - setup_remote_docker
-      # install python and awscli
-      - run:
-        name: Install dependencies
-        working_directory: /
-        command: apt-get update && apt-get install -y awscli
-          # apt-get -y -qq update
-          # apt-get -y -qq install python3
-          # curl -O https://bootstrap.pypa.io/get-pip.py
-          # python get-pip.py --user
-          # pip install awscli --upgrade --user
-
-      # # Login to AWS with IAM credentials
-      # - run: eval "$(aws ecr get-login --no-include-email --region ap-southeast-2)"
-      # - run: |
-      #     # This approach feels faster then the provided as example on Docker website using multi-staged builds.
-      #     # https://docs.docker.com/engine/examples/dotnetcore/
-      #     docker build -t corehelloworld:$CIRCLE_BUILD_NUM .
-      # # Tag image with version
-      # - run:  docker tag dotnetcorehelloworld:$CIRCLE_BUILD_NUM 200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:$CIRCLE_BUILD_NUM
-      # # Push image to ECR
-      # - run: docker push 200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:$CIRCLE_BUILD_NUM
+      # Login to AWS with IAM credentials
+      - run: eval "$(aws ecr get-login --no-include-email --region ap-southeast-2)"
+      - run: docker build -t dotnetcorehelloworld:$CIRCLE_BUILD_NUM .
+      # Tag image with version
+      - run:  docker tag dotnetcorehelloworld:$CIRCLE_BUILD_NUM 200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:$CIRCLE_BUILD_NUM
+      # Push image to ECR
+      - run: docker push 200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:$CIRCLE_BUILD_NUM
