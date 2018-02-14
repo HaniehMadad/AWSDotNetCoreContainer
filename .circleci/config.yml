@@ -9,7 +9,6 @@ jobs:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
     steps:
       - checkout
-      # Once unit-tests pass, create docker image
       # For security purposes, circleci requires this step to isolate remote docker commands. 
       # More info at: https://circleci.com/docs/2.0/building-docker-images/
       - setup_remote_docker
