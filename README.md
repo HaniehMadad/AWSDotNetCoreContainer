@@ -75,5 +75,11 @@ jobs:
 ```
 this configuration using https://hub.docker.com/r/hanieh/dotnetcore-aws-cli-docker-ce/ image which would have Docker CE and AWS CLI installed so we can login to AWS ECR (Elastic Container Registry) and push our image.
 
+3. Add AWS IAM user credential to the circleci's project settings, under *AWS Permissions*
+
+## Reference
+https://aws.amazon.com/ecr/
+https://circleci.com/blog/aws-ecr-auth-support/
+
 
 
