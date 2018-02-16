@@ -11,7 +11,7 @@ S3_BUCKET_KEY=docker-app-versions/$APP_ZIP_VERSION
 
 
 
-aws configure set default.region us-east-1
+aws configure set default.region ap-southeast-2
 
 # Authenticate against our Docker registry
 eval $(aws ecr get-login)
