@@ -81,5 +81,9 @@ this configuration using https://hub.docker.com/r/hanieh/dotnetcore-aws-cli-dock
 https://aws.amazon.com/ecr/
 https://circleci.com/blog/aws-ecr-auth-support/
 
+# Push to ECR and Deploy to EB
+1. Run the script ./aws/ecr-push.ps1 to push the latest change to ECR
+2. Run the script ./aws/aws-deploy.ps1 to deploy to EB
+
 
 
