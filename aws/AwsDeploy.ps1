@@ -1,26 +1,35 @@
-Param(
-    [parameter(Mandatory = $true)]
-    [string]
-    $APP_NAME,
-    [parameter(Mandatory = $true)]
-    [string]
-    $ENV_NAME,
-    [parameter(Mandatory = $true)]
-    [string]
-    $APP_VERSION
-)
+. "$PSScriptRoot\AwsReplaceConfig.ps1"
 
-# Parameters e.g.: $APP_NAME="Docker" $ENV_NAME="testdocker21" $APP_VERSION="21"
-$DEFAULT_REGION = "ap-southeast-2"
-$APP_DESC = ""
-$STACK_NAME = "64bit Amazon Linux 2017.09 v2.8.4 running Multi-container Docker 17.09.1-ce (Generic)"
-$S3_BUCKET = "elasticbeanstalk-$DEFAULT_REGION-200053207227"
-$S3_BUCKET_KEY = "docker-app-versions/$APP_VERSION"
+$rootDir = $PSScriptRoot
+$configFileName = "$rootDir\AwsClientConfig.json"
+$configFile = ConvertFrom-JSON (Get-Content $configFileName -Raw)
 
-Set-DefaultAWSRegion -Region $DEFAULT_REGION
+$APP_NAME = $configFile.ApplicationName
+$APP_VERSION = $configFile.VersionLabel
+$ENV_NAME= $configFile.EnvironmentName
+$DEFAULT_REGION = $configFile.DefaultRegion
+$APP_DESC = $configFile.ApplicationDescription
+$STACK_NAME = $configFile.SrackName
+$S3_BUCKET = $configFile.S3BucketName
+$S3_BUCKET_KEY = $configFile.S3BucketFolder+"/$APP_VERSION"
+
+# Replace ECR variables in Dockerrun.aws.json"
+$CONTAINER1_NAME = $configFile.Container1Name
+$CONTAINER1_ECR_REPO = $configFile.Container1EcrRepo
+$CONTAINER1_REPO_NAME = $configFile.Container1EcrRepoName
+$CONTAINER1_IMG_TAG = $configFile.Container1EcrImageTag
+
+Replace-Config -CONTAINER1_NAME $CONTAINER1_NAME -CONTAINER1_ECR_REPO $CONTAINER1_ECR_REPO -CONTAINER1_REPO_NAME $CONTAINER1_REPO_NAME -CONTAINER1_IMG_TAG $CONTAINER1_IMG_TAG
 
 # Zip up the Dockerrun file (feel free to zip up an .ebextensions directory with it)
-Compress-Archive -Path Dockerrun.aws.json,./.ebextensions -DestinationPath myapp.zip -Force
+Compress-Archive -Path Dockerrun.aws.json,$rootDir/.ebextensions -DestinationPath myapp.zip -Force
+
+$loggedIn = aws sts get-caller-identity
+if (!$loggedIn){
+    throw "Your security token has likely expired!  Run tatts-aws-login again to refresh your token!"
+}
+
+Set-DefaultAWSRegion -Region $DEFAULT_REGION
 
 $appExists = Get-EBApplication -ApplicationName $APP_NAME
 

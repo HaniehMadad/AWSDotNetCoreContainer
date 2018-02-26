@@ -2,8 +2,8 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "CONTAINER_NAME",
-      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/ECR_Repo_Name:ECR_IMG_TAG",
+      "name": "CONTAINER1_NAME",
+      "image": "CONTAINER1_ECR_REPO/CONTAINER1_REPO_NAME:CONTAINER1_IMG_TAG",
       "environment": [],
       "essential": true,
       "memory": 200,
