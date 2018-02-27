@@ -1,8 +1,8 @@
 {
     "ApplicationName": "Docker",
     "ApplicationDescription": "Dot net core container",
-    "EnvironmentName": "TestDocker10",
-    "VersionLabel": "v10",
+    "EnvironmentName": "Docker-dev",
+    "VersionLabel": "v21",
     "StackName": "64bit Amazon Linux 2017.09 v2.8.4 running Multi-container Docker 17.09.1-ce (Generic)",
     "S3BucketName": "elasticbeanstalk-ap-southeast-2-200053207227",
     "S3BucketFolder": "docker-app-versions", 
@@ -10,5 +10,5 @@
     "Container1Name": "DotNetCoreApp",
     "Container1EcrRepo": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com",
     "Container1EcrRepoName": "dotnetcorehelloworld",
-    "Container1EcrImageTag": "20"
+    "Container1EcrImageTag": "21"
 }

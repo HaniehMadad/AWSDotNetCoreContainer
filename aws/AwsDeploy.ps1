@@ -9,7 +9,7 @@ $APP_VERSION = $configFile.VersionLabel
 $ENV_NAME= $configFile.EnvironmentName
 $DEFAULT_REGION = $configFile.DefaultRegion
 $APP_DESC = $configFile.ApplicationDescription
-$STACK_NAME = $configFile.SrackName
+$STACK_NAME = $configFile.StackName
 $S3_BUCKET = $configFile.S3BucketName
 $S3_BUCKET_KEY = $configFile.S3BucketFolder+"/$APP_VERSION"
 
