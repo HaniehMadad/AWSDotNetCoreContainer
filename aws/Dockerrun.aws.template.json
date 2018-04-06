@@ -13,7 +13,13 @@
           "containerPort": 80
         }
       ],
-      "mountPoints": [],
+      "mountPoints": [
+        {
+          "sourceVolume": "netcore-app",
+          "containerPath": "/app/Logs",
+          "readOnly": true
+        }
+      ],
       "links": null,
       "volumesFrom": [],
       "extraHosts": null,
@@ -35,5 +41,12 @@
       "memoryReservation": null
     }
   ],
-  "volumes": []
+  "volumes": [
+    {
+      "name": "netcore-app",
+      "host": {
+        "sourcePath": "/var/app/current/netcore-app"
+      }
+    }
+  ]
 }

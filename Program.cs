@@ -14,12 +14,18 @@ namespace corehelloworld
     {
         public static void Main(string[] args)
         {
+            ILoggerFactory loggerFactory = new LoggerFactory()
+                .AddFile("Logs/mylog-{Date}.txt");
+            ILogger logger = loggerFactory.CreateLogger<Program>();
+            logger.LogInformation("This is a test of DotnetCoreHelloWorld app.");
+            logger.LogWarning("This is to test warning");
             BuildWebHost(args).Run();
+                        
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
+                    .UseStartup<Startup>()
+                    .Build();
     }
 }

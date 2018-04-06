@@ -2,8 +2,8 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "DotNetCore",
-      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:19",
+      "name": "DotNetCoreApp",
+      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:25",
       "environment": [],
       "essential": true,
       "memory": 200,
@@ -13,7 +13,13 @@
           "containerPort": 80
         }
       ],
-      "mountPoints": [],
+      "mountPoints": [
+        {
+          "sourceVolume": "netcore-app",
+          "containerPath": "/app/Logs",
+          "readOnly": true
+        }
+      ],
       "links": null,
       "volumesFrom": [],
       "extraHosts": null,
@@ -35,5 +41,12 @@
       "memoryReservation": null
     }
   ],
-  "volumes": []
+  "volumes": [
+    {
+      "name": "netcore-app",
+      "host": {
+        "sourcePath": "/var/app/current/netcore-app"
+      }
+    }
+  ]
 }
