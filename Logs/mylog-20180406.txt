@@ -1,0 +1,8 @@
+2018-04-06T12:51:11.1924390+10:00  [INF] This is a test of DotnetCoreHelloWorld app. (a8cddd7b)
+2018-04-06T12:51:11.2721060+10:00  [WRN] This is to test warning (a49e696e)
+2018-04-06T12:51:54.7277150+10:00  [INF] This is a test of DotnetCoreHelloWorld app. (a8cddd7b)
+2018-04-06T12:51:54.8088410+10:00  [WRN] This is to test warning (a49e696e)
+2018-04-06T12:53:44.1670690+10:00  [INF] This is a test of DotnetCoreHelloWorld app. (a8cddd7b)
+2018-04-06T12:53:44.2484240+10:00  [WRN] This is to test warning (a49e696e)
+2018-04-06T13:03:21.3317400+10:00  [INF] This is a test of DotnetCoreHelloWorld app. (a8cddd7b)
+2018-04-06T13:03:21.4083450+10:00  [WRN] This is to test warning (a49e696e)
