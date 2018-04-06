@@ -17,7 +17,7 @@
         {
           "sourceVolume": "netcore-app",
           "containerPath": "/app/Logs",
-          "readOnly": true
+          "readOnly": false
         }
       ],
       "links": null,

@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "DotNetCoreApp",
-      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:25",
+      "image": "200053207227.dkr.ecr.ap-southeast-2.amazonaws.com/dotnetcorehelloworld:27",
       "environment": [],
       "essential": true,
       "memory": 200,
@@ -17,7 +17,7 @@
         {
           "sourceVolume": "netcore-app",
           "containerPath": "/app/Logs",
-          "readOnly": true
+          "readOnly": false
         }
       ],
       "links": null,
