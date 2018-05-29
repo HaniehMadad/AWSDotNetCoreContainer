@@ -82,8 +82,8 @@ https://aws.amazon.com/ecr/
 https://circleci.com/blog/aws-ecr-auth-support/
 
 # Push to ECR and Deploy to EB
-1. Update the condig file ./aws/AwsClientConfig.json 
-2. If not using any CI to push to ECR, run the script ./aws/EcrPush.ps1 to push the latest changes to ECR
+1. Update the config file ./aws/AwsClientConfig.json 
+2. If you are not using any CI to push to ECR, run the script ./aws/EcrPush.ps1 to push the latest changes to ECR
 3. Run the script ./aws/AwsDeploy.ps1 to deploy to EB
 
 
